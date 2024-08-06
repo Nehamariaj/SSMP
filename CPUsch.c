@@ -30,9 +30,6 @@ case 5:{
 printf("EXITED!!\n");
 break;
 }
-default:{
-    printf("Wrong choice.Enter values between 1-5\n");
-}
 }
 }
 }
@@ -74,9 +71,9 @@ printf("    %d",tat[i]);
 }
 printf("\n");
 printf("Total turn around time=%d\n",tot_tat);
-printf("Total waiting time=%d\n",tot_wt);
+printf("Total waitng time=%d\n",tot_wt);
 printf("average turn around time=%f\n",((float)tot_tat/limit));
-printf("average waiting time=%f\n",((float)tot_wt/limit));
+printf("average waitng time=%f\n",((float)tot_wt/limit));
 }
 
 void SJF(){
@@ -127,9 +124,9 @@ printf("    %d",tat[i]);
 }
 printf("\n");
 printf("Total turn around time=%d\n",tot_tat);
-printf("Total waiting time=%d\n",tot_wt);
+printf("Total waitng time=%d\n",tot_wt);
 printf("average turn around time=%f\n",((float)tot_tat/limit));
-printf("average waiting time=%f\n",((float)tot_wt/limit));
+printf("average waitng time=%f\n",((float)tot_wt/limit));
 }
 
 void Priority(){
@@ -183,13 +180,13 @@ printf("    %d",tat[i]);
 }
 printf("\n");
 printf("Total turn around time=%d\n",tot_tat);
-printf("Total waiting time=%d\n",tot_wt);
+printf("Total waitng time=%d\n",tot_wt);
 printf("average turn around time=%f\n",((float)tot_tat/limit));
-printf("average waiting time=%f\n",((float)tot_wt/limit));
+printf("average waitng time=%f\n",((float)tot_wt/limit));
 }
 
 void RR(){
-int limit,tot_wt=0,tot_tat=0,tq,total=0,flag=0,i,j=0,flag1=0,k=0,r,q[50];
+int limit,tot_wt=0,tot_tat=0,tq,total=0,flag=0,i,q[50];
 printf("Enter the no of process:");
 scanf("%d",&limit);
 int process[limit],bt[limit],wt[limit],tat[limit],rt[limit];
@@ -200,10 +197,8 @@ rt[i]=bt[i];
 }
 printf("Enter the time quantum:");
 scanf("%d",&tq);
-r=tq;
 int a=0;
 q[a]=0;
-printf("GANTT CHART\n");
 while(flag!=limit){
 for(i=0;i<limit;i++){
 if(rt[i]>tq){
@@ -224,12 +219,11 @@ wt[i]=total-bt[i];
 printf(" |P%d| ",process[i]);
 flag++;
 }
-flag1++;
 }
 }
 printf("\n");
 for(int i=0;i<=a;i++){
-printf("%d     ",q[i]);
+printf("%d    ",q[i]);
 }
 printf("\nPROCESS BURST_TIME TURN_AROUND_TIME WAITING_TIME\n");
 for(int i=0;i<limit;i++){
@@ -240,7 +234,7 @@ tot_tat=tot_tat+tat[i];
 
 printf("\n");
 printf("Total turn around time=%d\n",tot_tat);
-printf("Total waiting time=%d\n",tot_wt);
+printf("Total waitng time=%d\n",tot_wt);
 printf("average turn around time=%f\n",((float)tot_tat/limit));
-printf("average waiting time=%f\n",((float)tot_wt/limit));
+printf("average waitng time=%f\n",((float)tot_wt/limit));
 }
