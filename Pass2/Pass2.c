@@ -87,6 +87,7 @@ if (length > 0) {
 textRecord[strlen(textRecord) - 1] = '\0'; // Remove the last '^'
 fprintf(objectcode, "T^%06d^%02X^%s\n", textStartAddr, length / 2, textRecord); // Ensure the last text record is written
 }
+fprintf(output, "%d %-7s%-7s%-7s", locctr, label, opcode, operand);
 fprintf(objectcode, "E^%06d\n", start);
 fclose(intermediate);
 fclose(symtab);
