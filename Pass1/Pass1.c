@@ -29,7 +29,7 @@ while (strcmp(opcode, "END") != 0) {
 fprintf(intermediate, "%d %-7s%-7s%-7s\n", locctr, label, opcode, operand);
 flag = 0;
 if (strcmp(label, "**") != 0) {
-fprintf(symtab, "%s\t%d\n", label, locctr);
+fprintf(symtab, "%-7s%-7d\n", label, locctr);
 } 
 if (strcmp(opcode, "WORD") == 0) {
 locctr += 3;
