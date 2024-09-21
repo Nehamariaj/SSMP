@@ -41,11 +41,11 @@ sprintf(objectCode + strlen(objectCode), "%02X", operand[i]);
 }
 }
 }
-while (strlen(objectCode) < 6) {//insert 0's to the left if the no of digits in objectcode is less than 6
+/*while (strlen(objectCode) < 6) {//insert 0's to the left if the no of digits in objectcode is less than 6
 char temp[10];
 sprintf(temp, "0%s", objectCode);
 strcpy(objectCode, temp);
-}
+}*/
 } else if (strcmp(opcode, "WORD") == 0) {
 sprintf(objectCode, "%06d", atoi(operand));
 } else if (strcmp(opcode, "RESB") == 0) {
